@@ -1,0 +1,33 @@
+{
+    "browser": {
+        "name": "chrome",
+        "headless": false,
+        "implicit_wait": 10,
+        "page_load_timeout": 30,
+        "window_size": "1920,1080"
+    },
+    "urls": {
+        "base_url": "https://www.google.com",
+        "test_url": "https://www.google.com"
+    },
+    "timeouts": {
+        "implicit_wait": 10,
+        "explicit_wait": 10,
+        "page_load": 30
+    },
+    "screenshots": {
+        "on_failure": true,
+        "on_success": false,
+        "screenshot_dir": "screenshots"
+    },
+    "reports": {
+        "html": true,
+        "allure": true,
+        "json": false,
+        "xml": false
+    },
+    "parallel": {
+        "enabled": false,
+        "workers": "auto"
+    }
+}

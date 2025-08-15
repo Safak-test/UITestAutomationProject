@@ -1,0 +1,78 @@
+{
+    "search_queries": {
+        "valid_searches": [
+            "Selenium Python",
+            "Test Automation",
+            "WebDriver",
+            "Python Testing",
+            "UI Automation"
+        ],
+        "special_characters": [
+            "Python @#$%^&*()",
+            "Test & Automation",
+            "WebDriver + Selenium",
+            "Python 3.8+",
+            "UI/UX Testing"
+        ],
+        "long_queries": [
+            "How to write effective UI automation tests with Selenium WebDriver and Python",
+            "Best practices for test automation framework design and implementation",
+            "Complete guide to web application testing with modern tools and techniques"
+        ],
+        "empty_queries": [
+            "",
+            "   ",
+            "\t",
+            "\n"
+        ]
+    },
+    "urls": {
+        "google": "https://www.google.com",
+        "google_search": "https://www.google.com/search",
+        "test_site": "https://www.example.com"
+    },
+    "expected_results": {
+        "google_title": "Google",
+        "search_results_expected": "search",
+        "min_results_count": 1
+    },
+    "test_users": {
+        "valid_user": {
+            "username": "testuser@example.com",
+            "password": "TestPassword123!"
+        },
+        "invalid_user": {
+            "username": "invalid@example.com",
+            "password": "WrongPassword"
+        }
+    },
+    "browser_configs": {
+        "chrome": {
+            "name": "chrome",
+            "headless": false,
+            "window_size": "1920,1080"
+        },
+        "firefox": {
+            "name": "firefox",
+            "headless": false,
+            "window_size": "1920,1080"
+        },
+        "edge": {
+            "name": "edge",
+            "headless": false,
+            "window_size": "1920,1080"
+        }
+    },
+    "timeouts": {
+        "short": 5,
+        "medium": 10,
+        "long": 30,
+        "very_long": 60
+    },
+    "test_categories": {
+        "smoke": ["test_google_search"],
+        "regression": ["test_google_search", "test_empty_search", "test_special_characters_search"],
+        "ui": ["test_google_search", "test_empty_search", "test_special_characters_search"],
+        "performance": ["test_google_search"]
+    }
+}

@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  ui-tests:
+    build: .
+    environment:
+      - TEST_ENV=docker
+      - BROWSER=chrome
+      - DISPLAY=:99
+    volumes:
+      - ./reports:/app/reports
+      - ./screenshots:/app/screenshots
+    command: python run_tests.py --browser chrome --markers smoke
+    
+  ui-tests-firefox:
+    build: .
+    environment:
+      - TEST_ENV=docker
+      - BROWSER=firefox
+      - DISPLAY=:99
+    volumes:
+      - ./reports:/app/reports
+      - ./screenshots:/app/screenshots
+    command: python run_tests.py --browser firefox --markers smoke
+    
+  ui-tests-parallel:
+    build: .
+    environment:
+      - TEST_ENV=docker
+      - BROWSER=chrome
+      - DISPLAY=:99
+    volumes:
+      - ./reports:/app/reports
+      - ./screenshots:/app/screenshots
+    command: python run_tests.py --browser chrome --parallel
+    
+  allure-server:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./reports:/app/reports
+    command: allure serve reports/*/allure-results -h 0.0.0.0 -p 8080
